@@ -1,7 +1,13 @@
 const Owner = require('../models/Owner');
 
-exports.getInfo = (req,res) => {
-    res.status(200).json({text: 'Hello world from header'});
+exports.getInfo = async (req,res) => {
+    try {
+        let ownerInfo = await Owner.findOne({name:"Facundo Fernández"});
+        return res.status(200).json({ownerInfo});
+    } catch (err) {
+        console.log('\x1b[31m', `Error: ${error}`);
+        return res.status(500).json({error: error.message});
+    }
 }
 
 exports.createInfo = async (req,res) => {
