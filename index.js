@@ -1,14 +1,15 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const app = express();
+const cors = require('cors');
 
 connectDB(); // DB Connection
 const PORT = process.env.PORT || 4000
-const cors = require('cors');
 
 app.use(express.json({extended: true}));
 
 app.use(cors());
+
 //Endpoints
 app.use('/visitor-info', require('./routes/visitor-info'));
 app.use('/owner-info',require('./routes/owner-info'));
