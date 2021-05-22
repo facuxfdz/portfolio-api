@@ -8,20 +8,10 @@ const typeString = {
 };
 
 const UserSchema = mongoose.Schema({
+    name: typeString,
     headerInfo:typeString ,
-    aboutInfo: {
-        className: typeString,
-        title: typeString,
-        description: typeString
-    },
-    projectsInfo: {
-        className: typeString,
-        title: typeString,
-        description: typeString
-    },
+    aboutInfo: typeString,
     formationInfo: {
-        className: typeString,
-        title: typeString,
         universityData: {
             name: typeString
         },
