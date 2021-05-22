@@ -7,4 +7,5 @@ router.get('/',ownerInfoController.getInfo);
 router.post('/', ownerInfoController.createInfo);
 
 router.put('/', ownerInfoController.updateInfo);
+
 module.exports = router;
